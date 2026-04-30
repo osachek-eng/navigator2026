@@ -2,176 +2,184 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Принудительная кодировка для защиты от "кракозябр" -->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Навигатор абитуриента 2026</title>
-    
-    <!-- Подключаем стили Tailwind -->
+    <title>Навигатор абитуриента 2026 | Москва</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        /* Стандартные шрифты для максимальной читаемости */
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-            line-height: 1.5;
-            background-color: #f8fafc;
-        }
-        .uni-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .uni-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        /* Стилизация кнопки перехода */
-        .external-link {
-            display: block;
-            background-color: #0f172a;
-            color: white !important;
-            text-align: center;
-            padding: 14px;
-            font-weight: bold;
-            text-decoration: none !important;
-            margin-top: auto;
-        }
-        .external-link:hover {
-            background-color: #2563eb;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .glass-card { background: white; border: 1px solid #e5e7eb; transition: all 0.3s ease; }
+        .glass-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1); }
+        .timeline-line::before { content: ''; position: absolute; left: 50%; width: 2px; height: 100%; background: #e5e7eb; transform: translateX(-50%); }
+        @media (max-width: 768px) { .timeline-line::before { left: 20px; } }
     </style>
 </head>
-<body>
+<body class="bg-slate-50 text-slate-900">
 
-    <!-- Шапка сайта -->
-    <header class="bg-white border-b p-4">
-        <div class="container mx-auto flex justify-between items-center">
-            <h1 class="text-xl font-bold text-blue-700">Навигатор 2026</h1>
-            <div class="text-sm bg-gray-100 px-3 py-1 rounded">Набор: РУС, МАТ, ФИЗ</div>
-        </div>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <nav class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="bg-blue-600 p-2 rounded-lg">
+                    <i class="fas fa-graduation-cap text-white text-xl"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight">Навигатор 2026</span>
+            </div>
+            <div class="hidden md:flex gap-6 font-medium text-sm text-slate-600">
+                <a href="#calendar" class="hover:text-blue-600">Календарь</a>
+                <a href="#universities" class="hover:text-blue-600">ВУЗы</a>
+                <a href="#cyber" class="hover:text-blue-600">ИБ-аналитика</a>
+                <a href="#guide" class="hover:text-blue-600">Гайд</a>
+            </div>
+            <div class="text-xs bg-blue-50 text-blue-700 px-3 py-1 rounded-full font-bold border border-blue-100 uppercase">
+                Рус + Мат + Физ
+            </div>
+        </nav>
     </header>
 
-    <!-- Главный баннер -->
-    <section class="bg-blue-600 text-white py-12 px-4">
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-blue-700 to-indigo-900 text-white py-16 px-4">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-extrabold mb-4">Поступление в Москву 2026</h2>
-            <p class="opacity-90">Справочник по направлениям Информационной Безопасности</p>
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4">Навигатор абитуриента 2026</h1>
+            <p class="text-blue-100 mb-8 max-w-xl mx-auto text-lg">График ЕГЭ и подбор ВУЗов Москвы по специальности «Информационная безопасность».</p>
+            <div id="countdown" class="flex justify-center gap-4"></div>
         </div>
     </section>
 
-    <!-- Сроки -->
-    <section class="container mx-auto py-10 px-4">
-        <h3 class="text-2xl font-bold mb-6">Важные даты</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div class="bg-white p-4 border-l-4 border-blue-500 shadow-sm">
-                <p class="font-bold">20 Июня</p>
-                <p class="text-sm text-gray-600">Начало приема документов</p>
+    <!-- Calendar -->
+    <section id="calendar" class="py-16 container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12">Важные даты 2026</h2>
+        <div class="relative timeline-line">
+            
+            <!-- ЕГЭ Математика -->
+            <div class="relative flex items-center justify-between mb-8 md:flex-row-reverse w-full">
+                <div class="hidden md:block w-5/12"></div>
+                <div class="z-20 flex items-center bg-indigo-500 w-8 h-8 rounded-full border-4 border-white shadow"></div>
+                <div class="bg-white rounded-xl shadow-sm border p-5 w-full md:w-5/12">
+                    <h3 class="font-bold text-indigo-600">1 Июня (пн)</h3>
+                    <p class="text-sm font-bold">ЕГЭ по Математике (профиль)</p>
+                    <p class="text-xs text-slate-500 mt-1 italic">Базовый предмет для технаря.</p>
+                </div>
             </div>
-            <div class="bg-white p-4 border-l-4 border-blue-500 shadow-sm">
-                <p class="font-bold">25 Июля</p>
-                <p class="text-sm text-gray-600">Окончание приема заявлений</p>
+
+            <!-- ЕГЭ Русский -->
+            <div class="relative flex items-center justify-between mb-8 w-full">
+                <div class="hidden md:block w-5/12"></div>
+                <div class="z-20 flex items-center bg-indigo-500 w-8 h-8 rounded-full border-4 border-white shadow"></div>
+                <div class="bg-white rounded-xl shadow-sm border p-5 w-full md:w-5/12 text-right">
+                    <h3 class="font-bold text-indigo-600">4 Июня (чт)</h3>
+                    <p class="text-sm font-bold">ЕГЭ по Русскому языку</p>
+                    <p class="text-xs text-slate-500 mt-1 italic">Обязательный для всех ВУЗов.</p>
+                </div>
             </div>
-            <div class="bg-blue-50 p-4 border-l-4 border-green-500 shadow-sm">
-                <p class="font-bold text-green-700">3 Августа (12:00 МСК)</p>
-                <p class="text-sm text-gray-600">Крайний срок подачи оригинала</p>
+
+            <!-- ЕГЭ Физика -->
+            <div class="relative flex items-center justify-between mb-8 md:flex-row-reverse w-full">
+                <div class="hidden md:block w-5/12"></div>
+                <div class="z-20 flex items-center bg-indigo-500 w-8 h-8 rounded-full border-4 border-white shadow"></div>
+                <div class="bg-white rounded-xl shadow-sm border p-5 w-full md:w-5/12">
+                    <h3 class="font-bold text-indigo-600">8 Июня (пн)</h3>
+                    <p class="text-sm font-bold">ЕГЭ по Физике</p>
+                    <p class="text-xs text-slate-500 mt-1 italic">Профильный предмет для ИТ и ИБ.</p>
+                </div>
+            </div>
+
+            <!-- Старт приема -->
+            <div class="relative flex items-center justify-between mb-8 w-full">
+                <div class="hidden md:block w-5/12"></div>
+                <div class="z-20 flex items-center bg-blue-600 w-8 h-8 rounded-full border-4 border-white shadow"></div>
+                <div class="bg-blue-50 rounded-xl shadow-sm border border-blue-200 p-5 w-full md:w-5/12 text-right">
+                    <h3 class="font-bold text-blue-600 uppercase text-xs tracking-wider mb-1">Приемная кампания</h3>
+                    <h3 class="font-bold text-slate-900">20 Июня</h3>
+                    <p class="text-sm">Старт приема документов в ВУЗы.</p>
+                </div>
+            </div>
+
+            <!-- Конец приема -->
+            <div class="relative flex items-center justify-between mb-8 md:flex-row-reverse w-full">
+                <div class="hidden md:block w-5/12"></div>
+                <div class="z-20 flex items-center bg-red-500 w-8 h-8 rounded-full border-4 border-white shadow"></div>
+                <div class="bg-red-50 rounded-xl shadow-sm border border-red-200 p-5 w-full md:w-5/12">
+                    <h3 class="font-bold text-red-500">3 Августа (12:00)</h3>
+                    <p class="text-sm font-bold italic">Конец приема оригиналов документов!</p>
+                    <p class="text-xs text-slate-600 mt-1 uppercase font-bold tracking-tighter text-[10px]">Решающий момент зачисления</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Список ВУЗов -->
-    <section class="container mx-auto py-10 px-4">
-        <h3 class="text-2xl font-bold mb-8 italic">Список институтов и баллы 2025</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="university-container">
-            <!-- Карточки будут вставлены сюда через JavaScript -->
+    <!-- Universities -->
+    <section id="universities" class="py-16 bg-slate-100">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-end mb-10">
+                <div>
+                    <h2 class="text-3xl font-bold mb-2">Каталог ВУЗов</h2>
+                    <p class="text-slate-600">Направления ИБ: 10.03.01 и 10.05.03</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="uni-list"></div>
         </div>
     </section>
 
-    <footer class="bg-gray-100 py-10 text-center text-gray-500 text-sm">
-        <p>Навигатор абитуриента © 2026</p>
+    <!-- Guide (Hidden/Minimalist) -->
+    <section id="guide" class="py-16 bg-white border-t">
+        <div class="container mx-auto px-4 max-w-2xl text-center">
+            <h2 class="text-2xl font-bold mb-4">Порядок действий</h2>
+            <div class="text-left space-y-4 text-sm text-slate-700">
+                <p>1. <strong>Сдать ЕГЭ:</strong> Набрать целевые баллы (ориентир 260+).</p>
+                <p>2. <strong>Подать заявление:</strong> До 25 июля через Госуслуги или лично.</p>
+                <p>3. <strong>Расставить приоритеты:</strong> Самый желанный ВУЗ — №1.</p>
+                <p>4. <strong>Оригинал:</strong> Подать через Госуслуги до 3 августа 12:00.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-10 text-center text-sm px-4">
+        <p>&copy; 2026 Поступление в Москву (Физ + Мат + Рус). Все данные справочные.</p>
     </footer>
 
     <script>
-        // Данные институтов
-        const data = [
-            {
-                name: "МГТУ им. Н.Э. Баумана",
-                tag: "Бауманка",
-                b1: "282", b2: "278",
-                site: "https://priem.bmstu.ru/"
-            },
-            {
-                name: "МФТИ (Физтех)",
-                tag: "Долгопрудный / Москва",
-                b1: "302", b2: "298",
-                site: "https://pk.mipt.ru/"
-            },
-            {
-                name: "НИЯУ МИФИ",
-                tag: "Ядерный университет",
-                b1: "285", b2: "281",
-                site: "https://admission.mephi.ru/"
-            },
-            {
-                name: "РТУ МИРЭА",
-                tag: "Технологический",
-                b1: "262", b2: "258",
-                site: "https://priem.mirea.ru/"
-            },
-            {
-                name: "НИУ МЭИ",
-                tag: "Энергетический",
-                b1: "255", b2: "248",
-                site: "https://pke.mpei.ru/"
-            },
-            {
-                name: "МТУСИ",
-                tag: "Связь и Информатика",
-                b1: "245", b2: "240",
-                site: "https://abitur.mtuci.ru/"
-            },
-            {
-                name: "Финансовый университет",
-                tag: "При Правительстве РФ",
-                b1: "272", b2: "—",
-                site: "http://www.fa.ru/priem/pk/"
-            }
+        const unis = [
+            { name: "МГТУ им. Н.Э. Баумана", short: "Бауманка", scores: "282/278", link: "https://priem.bmstu.ru/", icon: "🏛️" },
+            { name: "МФТИ", short: "Физтех", scores: "302/298", link: "https://pk.mipt.ru/", icon: "⚛️" },
+            { name: "НИЯУ МИФИ", short: "МИФИ", scores: "285/281", link: "https://admission.mephi.ru/", icon: "☢️" },
+            { name: "НИУ МЭИ", short: "МЭИ", scores: "255/248", link: "https://pke.mpei.ru/", icon: "⚡" },
+            { name: "РТУ МИРЭА", short: "МИРЭА", scores: "262/258", link: "https://priem.mirea.ru/", icon: "📡" },
+            { name: "МТУСИ", short: "МТУСИ", scores: "245/240", link: "https://abitur.mtuci.ru/", icon: "📞" },
+            { name: "Финансовый университет", short: "ФинУниверситет", scores: "272/—", link: "https://www.fa.ru/priem/pk/", icon: "💰" }
         ];
 
-        const container = document.getElementById('university-container');
-
-        // Создание карточек
-        data.forEach(item => {
-            const card = document.createElement('div');
-            card.className = 'uni-card';
-            card.innerHTML = `
-                <div class="p-6">
-                    <h4 class="text-xl font-bold text-gray-900 mb-1">${item.name}</h4>
-                    <p class="text-blue-600 text-xs font-semibold uppercase mb-4">${item.tag}</p>
-                    
-                    <div class="bg-gray-50 p-3 rounded-lg mb-2">
-                        <div class="flex justify-between text-sm mb-1">
-                            <span>10.03.01 (ИБ):</span>
-                            <span class="font-bold">${item.b1}</span>
-                        </div>
-                        <div class="flex justify-between text-sm">
-                            <span>10.05.03 (Спец):</span>
-                            <span class="font-bold">${item.b2}</span>
+        function init() {
+            const list = document.getElementById('uni-list');
+            list.innerHTML = unis.map(u => `
+                <div class="glass-card rounded-2xl flex flex-col h-full">
+                    <div class="p-6 flex-grow">
+                        <div class="text-3xl mb-3">${u.icon}</div>
+                        <h3 class="font-bold text-lg mb-1">${u.name}</h3>
+                        <p class="text-blue-600 text-xs font-bold uppercase mb-4">${u.short}</p>
+                        <div class="bg-slate-50 p-3 rounded-lg border border-slate-200">
+                            <div class="flex justify-between text-sm">
+                                <span>Проходной балл '25:</span>
+                                <span class="font-bold">${u.scores}</span>
+                            </div>
                         </div>
                     </div>
-                    <p class="text-[10px] text-gray-400 italic">*баллы указаны за прошлый год</p>
+                    <a href="${u.link}" target="_blank" rel="noopener" class="bg-slate-900 text-white text-center py-4 font-bold hover:bg-blue-600 transition-colors rounded-b-2xl">
+                        Приемная комиссия <i class="fas fa-external-link-alt ml-2 text-[10px]"></i>
+                    </a>
                 </div>
-                <a href="${item.site}" target="_blank" rel="noopener noreferrer" class="external-link">
-                    ПЕРЕЙТИ НА САЙТ
-                </a>
-            `;
-            container.appendChild(card);
-        });
+            `).join('');
+
+            const target = new Date('June 20, 2026').getTime();
+            const now = new Date().getTime();
+            const diff = target - now;
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            document.getElementById('countdown').innerHTML = `<div class="bg-white/20 px-6 py-2 rounded-full font-bold border border-white/30">До начала приема: ${days} дн.</div>`;
+        }
+
+        window.onload = init;
     </script>
 </body>
 </html>
