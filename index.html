@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Принудительная кодировка для защиты от "кракозябр" -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Навигатор абитуриента 2026</title>
+    
+    <!-- Подключаем стили Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        /* Стандартные шрифты для максимальной читаемости */
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            line-height: 1.5;
+            background-color: #f8fafc;
+        }
+        .uni-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .uni-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        /* Стилизация кнопки перехода */
+        .external-link {
+            display: block;
+            background-color: #0f172a;
+            color: white !important;
+            text-align: center;
+            padding: 14px;
+            font-weight: bold;
+            text-decoration: none !important;
+            margin-top: auto;
+        }
+        .external-link:hover {
+            background-color: #2563eb;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="bg-white border-b p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold text-blue-700">Навигатор 2026</h1>
+            <div class="text-sm bg-gray-100 px-3 py-1 rounded">Набор: РУС, МАТ, ФИЗ</div>
+        </div>
+    </header>
+
+    <!-- Главный баннер -->
+    <section class="bg-blue-600 text-white py-12 px-4">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-extrabold mb-4">Поступление в Москву 2026</h2>
+            <p class="opacity-90">Справочник по направлениям Информационной Безопасности</p>
+        </div>
+    </section>
+
+    <!-- Сроки -->
+    <section class="container mx-auto py-10 px-4">
+        <h3 class="text-2xl font-bold mb-6">Важные даты</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="bg-white p-4 border-l-4 border-blue-500 shadow-sm">
+                <p class="font-bold">20 Июня</p>
+                <p class="text-sm text-gray-600">Начало приема документов</p>
+            </div>
+            <div class="bg-white p-4 border-l-4 border-blue-500 shadow-sm">
+                <p class="font-bold">25 Июля</p>
+                <p class="text-sm text-gray-600">Окончание приема заявлений</p>
+            </div>
+            <div class="bg-blue-50 p-4 border-l-4 border-green-500 shadow-sm">
+                <p class="font-bold text-green-700">3 Августа (12:00 МСК)</p>
+                <p class="text-sm text-gray-600">Крайний срок подачи оригинала</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Список ВУЗов -->
+    <section class="container mx-auto py-10 px-4">
+        <h3 class="text-2xl font-bold mb-8 italic">Список институтов и баллы 2025</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="university-container">
+            <!-- Карточки будут вставлены сюда через JavaScript -->
+        </div>
+    </section>
+
+    <footer class="bg-gray-100 py-10 text-center text-gray-500 text-sm">
+        <p>Навигатор абитуриента © 2026</p>
+    </footer>
+
+    <script>
+        // Данные институтов
+        const data = [
+            {
+                name: "МГТУ им. Н.Э. Баумана",
+                tag: "Бауманка",
+                b1: "282", b2: "278",
+                site: "https://priem.bmstu.ru/"
+            },
+            {
+                name: "МФТИ (Физтех)",
+                tag: "Долгопрудный / Москва",
+                b1: "302", b2: "298",
+                site: "https://pk.mipt.ru/"
+            },
+            {
+                name: "НИЯУ МИФИ",
+                tag: "Ядерный университет",
+                b1: "285", b2: "281",
+                site: "https://admission.mephi.ru/"
+            },
+            {
+                name: "РТУ МИРЭА",
+                tag: "Технологический",
+                b1: "262", b2: "258",
+                site: "https://priem.mirea.ru/"
+            },
+            {
+                name: "НИУ МЭИ",
+                tag: "Энергетический",
+                b1: "255", b2: "248",
+                site: "https://pke.mpei.ru/"
+            },
+            {
+                name: "МТУСИ",
+                tag: "Связь и Информатика",
+                b1: "245", b2: "240",
+                site: "https://abitur.mtuci.ru/"
+            },
+            {
+                name: "Финансовый университет",
+                tag: "При Правительстве РФ",
+                b1: "272", b2: "—",
+                site: "http://www.fa.ru/priem/pk/"
+            }
+        ];
+
+        const container = document.getElementById('university-container');
+
+        // Создание карточек
+        data.forEach(item => {
+            const card = document.createElement('div');
+            card.className = 'uni-card';
+            card.innerHTML = `
+                <div class="p-6">
+                    <h4 class="text-xl font-bold text-gray-900 mb-1">${item.name}</h4>
+                    <p class="text-blue-600 text-xs font-semibold uppercase mb-4">${item.tag}</p>
+                    
+                    <div class="bg-gray-50 p-3 rounded-lg mb-2">
+                        <div class="flex justify-between text-sm mb-1">
+                            <span>10.03.01 (ИБ):</span>
+                            <span class="font-bold">${item.b1}</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span>10.05.03 (Спец):</span>
+                            <span class="font-bold">${item.b2}</span>
+                        </div>
+                    </div>
+                    <p class="text-[10px] text-gray-400 italic">*баллы указаны за прошлый год</p>
+                </div>
+                <a href="${item.site}" target="_blank" rel="noopener noreferrer" class="external-link">
+                    ПЕРЕЙТИ НА САЙТ
+                </a>
+            `;
+            container.appendChild(card);
+        });
+    </script>
+</body>
+</html>
