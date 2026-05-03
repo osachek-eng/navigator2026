@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Навигатор 2026 | ИБ и Физика</title>
+    <title>Навигатор 2026 | Полный контроль</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -11,56 +11,63 @@
         body { font-family: 'Inter', sans-serif; background: #f8fafc; }
         .card { background: white; border-radius: 1.5rem; border: 1px solid #e2e8f0; transition: 0.3s; height: 100%; display: flex; flex-direction: column; }
         .card:hover { border-color: #3b82f6; box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2); }
-        .tag-sport { background: #fff7ed; color: #c2410c; border: 1px solid #fdba74; font-size: 11px; padding: 2px 8px; border-radius: 6px; font-weight: 700; }
+        .tag-sport { background: #fff7ed; color: #c2410c; border: 1px solid #fdba74; font-size: 11px; padding: 2px 8px; border-radius: 6px; font-weight: 700; transition: 0.2s; }
+        .tag-sport:hover { background: #ffedd5; transform: scale(1.05); }
         .date-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.875rem; }
+        .cell-link { transition: 0.2s; display: block; width: 100%; height: 100%; }
+        .cell-link:hover { color: #2563eb; background: #eff6ff; border-radius: 4px; }
     </style>
 </head>
 <body class="text-slate-900 pb-20">
 
-    <!-- Header -->
     <header class="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <div class="flex items-center gap-2 font-black text-xl tracking-tighter">
                 <span class="text-blue-600">NAVIGATOR</span><span>2026</span>
             </div>
-            <div id="timer" class="text-xs font-bold bg-slate-100 px-4 py-2 rounded-full">
-                До приема документов: <span id="days-count" class="text-blue-600">--</span> дн.
+            <div id="timer" class="text-xs font-bold bg-slate-900 text-white px-4 py-2 rounded-full">
+                До приема: <span id="days-count" class="text-blue-400">--</span> дн.
             </div>
         </div>
     </header>
 
     <main class="container mx-auto px-4 mt-8">
         
-        <!-- Detailed Timeline -->
-        <section class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-            <div class="bg-white p-8 rounded-[2rem] border border-slate-200">
-                <h2 class="text-xl font-black mb-6 flex items-center gap-2 uppercase tracking-tight">
-                    <i class="fas fa-edit text-blue-600"></i> Экзамены (ЕГЭ)
-                </h2>
+        <!-- Timeline Section -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+            <!-- ЕГЭ -->
+            <div class="bg-white p-6 rounded-3xl border border-slate-200">
+                <h2 class="text-sm font-black mb-4 uppercase text-slate-400 tracking-widest">Экзамены</h2>
                 <div class="space-y-1">
                     <div class="date-row"><span>Русский язык</span><span class="font-bold">4 июня</span></div>
-                    <div class="date-row"><span>Математика (Профиль)</span><span class="font-bold">8 июня</span></div>
+                    <div class="date-row"><span>Математика</span><span class="font-bold">8 июня</span></div>
                     <div class="date-row text-blue-600"><span>Физика</span><span class="font-bold">11 июня</span></div>
-                    <div class="date-row"><span>Резервные дни</span><span class="font-bold">16 - 23 июня</span></div>
                 </div>
             </div>
 
-            <div class="bg-slate-900 text-white p-8 rounded-[2rem] shadow-xl shadow-blue-100">
-                <h2 class="text-xl font-black mb-6 flex items-center gap-2 uppercase tracking-tight">
-                    <i class="fas fa-calendar-check text-blue-400"></i> Приемная кампания
-                </h2>
-                <div class="space-y-1 text-slate-300">
-                    <div class="date-row border-slate-800"><span class="font-bold text-white">20 июня</span><span>Старт приема документов</span></div>
-                    <div class="date-row border-slate-800"><span class="font-bold text-white">25 июля</span><span>Финиш приема (по ЕГЭ)</span></div>
-                    <div class="date-row border-slate-800"><span class="font-bold text-white">27 июля</span><span>Публикация конкурсных списков</span></div>
-                    <div class="date-row border-slate-800"><span class="font-bold text-blue-400">3 августа (12:00)</span><span>Дедлайн подачи оригиналов</span></div>
-                    <div class="date-row border-slate-800"><span class="font-bold text-white">4-9 августа</span><span>Издание приказов</span></div>
+            <!-- Бюджет -->
+            <div class="bg-white p-6 rounded-3xl border border-slate-200">
+                <h2 class="text-sm font-black mb-4 uppercase text-green-600 tracking-widest">Бюджет</h2>
+                <div class="space-y-1">
+                    <div class="date-row"><span>Старт приема</span><span class="font-bold">20 июня</span></div>
+                    <div class="date-row"><span>Списки</span><span class="font-bold">27 июля</span></div>
+                    <div class="date-row font-bold text-red-600"><span>Оригинал до</span><span>3 авг 12:00</span></div>
+                </div>
+            </div>
+
+            <!-- Платное -->
+            <div class="bg-slate-900 text-white p-6 rounded-3xl shadow-xl shadow-blue-100">
+                <h2 class="text-sm font-black mb-4 uppercase text-blue-400 tracking-widest">Платное (Контракт)</h2>
+                <div class="space-y-1">
+                    <div class="date-row border-slate-800"><span>Заключение договоров</span><span class="font-bold text-white">до 15 августа</span></div>
+                    <div class="date-row border-slate-800"><span>Оплата 1 семестра</span><span class="font-bold text-white">до 20 августа</span></div>
+                    <div class="date-row border-slate-800 text-blue-400"><span>Приказы (платно)</span><span class="font-bold">до 28 августа</span></div>
                 </div>
             </div>
         </section>
 
         <!-- Universities Grid -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="uni-list"></div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="uni-list"></div>
     </main>
 
     <script>
@@ -76,7 +83,7 @@
             },
             {
                 name: "НИТУ МИСИС",
-                sport: null, // МС баллов не дает в 2026
+                sport: "Только ГТО (3 б.)",
                 link: "https://misis.ru/applicants/admission/",
                 specs: [
                     { name: "Информ. безопасность (Б)", budget: 45, paid: 60, score: 272, price: "310.000" },
@@ -120,6 +127,7 @@
         ];
 
         function init() {
+            // Timer
             const start = new Date('2026-06-20');
             const diff = start - new Date();
             document.getElementById('days-count').innerText = Math.max(0, Math.ceil(diff / (1000 * 60 * 60 * 24)));
@@ -129,31 +137,34 @@
                 <div class="card p-8">
                     <div class="flex justify-between items-start mb-6 gap-4">
                         <h3 class="font-black text-xl leading-tight">${u.name}</h3>
-                        ${u.sport ? `<span class="tag-sport whitespace-nowrap">${u.sport}</span>` : ''}
+                        <a href="${u.link}" target="_blank" class="tag-sport whitespace-nowrap">
+                            <i class="fas fa-trophy mr-1"></i> ${u.sport}
+                        </a>
                     </div>
                     
                     <div class="flex-grow">
                         <div class="grid grid-cols-4 text-[10px] font-black text-slate-400 uppercase mb-2 px-2">
-                            <div class="col-span-1">Направление</div>
+                            <div>Направление</div>
                             <div class="text-center">Бюдж.</div>
                             <div class="text-center">Плат.</div>
                             <div class="text-right">Цена</div>
                         </div>
                         <div class="space-y-1">
                             ${u.specs.map(s => `
-                                <div class="grid grid-cols-4 items-center bg-slate-50 p-3 rounded-xl border border-slate-100 text-sm">
-                                    <div class="font-bold text-slate-700 leading-tight">${s.name}</div>
-                                    <div class="text-center font-black text-green-600">${s.budget}</div>
-                                    <div class="text-center font-bold text-slate-400">${s.paid}</div>
-                                    <div class="text-right font-black text-blue-600">${s.price}</div>
+                                <div class="grid grid-cols-4 items-center bg-slate-50 rounded-xl border border-slate-100 text-sm overflow-hidden">
+                                    <a href="${u.link}" target="_blank" class="p-3 font-bold text-slate-700 leading-tight cell-link">${s.name}</a>
+                                    <a href="${u.link}" target="_blank" class="p-3 text-center font-black text-green-600 cell-link">${s.budget}</a>
+                                    <a href="${u.link}" target="_blank" class="p-3 text-center font-bold text-slate-400 cell-link">${s.paid}</a>
+                                    <a href="${u.link}" target="_blank" class="p-3 text-right font-black text-blue-600 cell-link">${s.price}</a>
                                 </div>
                             `).join('')}
                         </div>
                     </div>
 
-                    <div class="mt-8 pt-6 border-t border-slate-100">
+                    <div class="mt-8 pt-6 border-t border-slate-100 text-center">
+                        <p class="text-[10px] text-slate-400 uppercase font-bold mb-3 tracking-widest">Проверка данных на официальном сайте</p>
                         <a href="${u.link}" target="_blank" class="flex items-center justify-center gap-2 w-full py-4 bg-slate-900 text-white rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-blue-600 transition-colors">
-                            Приемная комиссия <i class="fas fa-external-link-alt text-[10px]"></i>
+                            Перейти в приемную комиссию <i class="fas fa-external-link-alt text-[10px]"></i>
                         </a>
                     </div>
                 </div>
