@@ -3,28 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Навигатор 2026 | Проверенные ссылки</title>
+    <title>Навигатор 2026 | Советы и Лайфхаки</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
         body { font-family: 'Inter', sans-serif; background: #f8fafc; }
         .card { background: white; border-radius: 1.5rem; border: 1px solid #e2e8f0; transition: 0.3s; height: 100%; display: flex; flex-direction: column; }
         .card:hover { border-color: #3b82f6; box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.2); }
-        .tag-sport { background: #fff7ed; color: #c2410c; border: 1px solid #fdba74; font-size: 11px; padding: 2px 8px; border-radius: 6px; font-weight: 700; transition: 0.2s; display: inline-flex; align-items: center; }
-        .tag-sport:hover { background: #ffedd5; transform: scale(1.05); }
+        .tag-sport { background: #fff7ed; color: #c2410c; border: 1px solid #fdba74; font-size: 11px; padding: 2px 8px; border-radius: 6px; font-weight: 700; }
         .date-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.875rem; }
-        .cell-link { transition: 0.2s; display: block; width: 100%; height: 100%; }
-        .cell-link:hover { background: #eff6ff; border-radius: 6px; }
-        .spec-code { font-family: monospace; font-size: 10px; color: #64748b; background: #f1f5f9; padding: 1px 4px; border-radius: 3px; }
+        .cell-link:hover { background: #eff6ff; border-radius: 6px; color: #2563eb; }
+        .tip-card { background: white; border-left: 4px solid #3b82f6; padding: 1.5rem; border-radius: 1rem; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
     </style>
 </head>
 <body class="text-slate-900 pb-20">
 
+    <!-- Header -->
     <header class="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-2 font-black text-xl tracking-tighter text-blue-800">
-                <i class="fas fa-shield-alt"></i> NAVIGATOR 2026
+            <div class="flex items-center gap-2 font-black text-xl text-blue-800">
+                <i class="fas fa-rocket"></i> NAVIGATOR 2026
             </div>
             <div id="timer" class="text-xs font-bold bg-slate-900 text-white px-4 py-2 rounded-full">
                 До приема: <span id="days-count" class="text-blue-400">--</span> дн.
@@ -34,53 +33,96 @@
 
     <main class="container mx-auto px-4 mt-8">
         
-        <!-- Timeline Section -->
+        <!-- Timeline -->
         <section class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-            <!-- ЕГЭ -->
             <div class="bg-white p-6 rounded-3xl border border-slate-200">
-                <h2 class="text-xs font-black mb-4 uppercase text-slate-400 tracking-widest">ЕГЭ 2026</h2>
+                <h2 class="text-xs font-black mb-4 uppercase text-slate-400 tracking-widest">Экзамены</h2>
                 <div class="space-y-1">
                     <div class="date-row"><span>Русский язык</span><span class="font-bold">4 июня</span></div>
-                    <div class="date-row"><span>Математика (П)</span><span class="font-bold">8 июня</span></div>
                     <div class="date-row text-blue-600 font-bold"><span>Физика</span><span>11 июня</span></div>
                 </div>
             </div>
-
-            <!-- Бюджет -->
             <div class="bg-white p-6 rounded-3xl border border-slate-200">
                 <h2 class="text-xs font-black mb-4 uppercase text-green-600 tracking-widest">Бюджет</h2>
                 <div class="space-y-1">
-                    <div class="date-row"><span>Прием документов</span><span class="font-bold text-slate-500">20.06 - 25.07</span></div>
-                    <div class="date-row"><span>Конкурсные списки</span><span class="font-bold">27 июля</span></div>
-                    <div class="date-row text-red-600 font-bold"><span>Оригинал в ВУЗ</span><span>3 авг 12:00</span></div>
+                    <div class="date-row"><span>Списки</span><span class="font-bold">27 июля</span></div>
+                    <div class="date-row text-red-600 font-bold"><span>Оригинал до</span><span>3 авг 12:00</span></div>
                 </div>
             </div>
-
-            <!-- Платное -->
-            <div class="bg-slate-900 text-white p-6 rounded-3xl shadow-xl">
-                <h2 class="text-xs font-black mb-4 uppercase text-blue-400 tracking-widest">Платное</h2>
+            <div class="bg-slate-900 text-white p-6 rounded-3xl shadow-lg">
+                <h2 class="text-xs font-black mb-4 uppercase text-blue-400 tracking-widest">План Б</h2>
                 <div class="space-y-1">
-                    <div class="date-row border-slate-800"><span>Старт договоров</span><span class="font-bold text-white">20 июня</span></div>
-                    <div class="date-row border-slate-800"><span>Завершение (оплата)</span><span class="font-bold text-white">~20 августа</span></div>
-                    <div class="date-row border-slate-800 text-blue-400 font-bold"><span>Приказы (платно)</span><span>до 28 августа</span></div>
+                    <div class="date-row border-slate-800"><span>Договор</span><span class="font-bold">до 15 августа</span></div>
+                    <div class="date-row border-slate-800"><span>Оплата</span><span class="font-bold">до 20 августа</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Knowledge Base / Hacks -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-black mb-8 flex items-center gap-3">
+                <i class="fas fa-lightbulb text-yellow-500"></i> База знаний абитуриента
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Tip 1 -->
+                <div class="tip-card">
+                    <h3 class="font-bold text-blue-800 mb-2 underline decoration-blue-200">Как добрать баллы?</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Не забывайте про **ИД (Индивидуальные достижения)**. Даже если нет МС, золотой значок ГТО дает во многих вузах +2...3 балла, а аттестат с отличием — до +10. Проверяйте разделы «Учет достижений» на сайтах.
+                    </p>
+                </div>
+                <!-- Tip 2 -->
+                <div class="tip-card">
+                    <h3 class="font-bold text-blue-800 mb-2 underline decoration-blue-200">Стратегия «Одной волны»</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Сейчас нет «второй волны» зачисления. Все 100% бюджетных мест заполняются в один день (3 августа). Если вы на 20-м месте при 15 бюджетных, и перед вами нет оригиналов — **рискуйте и подавайте**.
+                    </p>
+                </div>
+                <!-- Tip 3 -->
+                <div class="tip-card border-l-orange-500">
+                    <h3 class="font-bold text-orange-700 mb-2 underline decoration-orange-200">Если баллы минимальные?</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Если не хватает даже на платку в топовый вуз — смотрите **филиалы** или **колледжи при вузах**. После колледжа можно поступить в тот же вуз по внутренним экзаменам, минуя ЕГЭ.
+                    </p>
+                </div>
+                <!-- Tip 4 -->
+                <div class="tip-card border-l-indigo-500">
+                    <h3 class="font-bold text-indigo-800 mb-2 underline decoration-indigo-200">Кредит под 3%</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Господдержка реально работает. Платите только проценты во время учебы (пару сотен рублей в месяц), а основной долг — через 9 месяцев после выпуска. Это позволит пойти на ИБ даже при высоком конкурсе.
+                    </p>
+                </div>
+                <!-- Tip 5 -->
+                <div class="tip-card border-l-red-500">
+                    <h3 class="font-bold text-red-700 mb-2 underline decoration-red-200">Что если провалил ЕГЭ?</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Есть **«Резервные дни»** (в июне) для пересдачи одного предмета, если не набран порог. Если же баллы просто низкие — идите в негосударственный вуз с аккредитацией (типа МФЮА), там требования ниже.
+                    </p>
+                </div>
+                <!-- Tip 6 -->
+                <div class="tip-card border-l-green-500">
+                    <h3 class="font-bold text-green-800 mb-2 underline decoration-green-200">Мониторинг списков</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed">
+                        Списки обновляются каждый час. Используйте сторонние сервисы (например, Admlist), чтобы видеть реальную картину по оригиналам в 2026 году. Не паникуйте раньше времени.
+                    </p>
                 </div>
             </div>
         </section>
 
         <!-- Universities Grid -->
+        <h2 class="text-2xl font-black mb-8 flex items-center gap-3">
+            <i class="fas fa-university text-blue-600"></i> Список вузов и специальностей
+        </h2>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="uni-list"></div>
     </main>
 
     <script>
+        // Данные вузов (оставляем без изменений, но с правильными ссылками из прошлого шага)
         const unis = [
             {
                 name: "РГУ нефти и газа им. Губкина",
                 sport: "МС: +10 б. / КМС: +5 б.",
-                links: {
-                    kcp: "https://www.gubkin.ru/info/enrollee/admission_board/postupayushchim-v-bakalavriat/2.%20%D0%9A%D0%BE%D0%BD%D1%82%D1%80%D0%BE%D0%BB%D1%8C%D0%BD%D1%8B%D0%B5%20%D1%86%D0%B8%D1%84%D1%80%D1%8B%20%D0%BF%D1%80%D0%B8%D0%B5%D0%BC%D0%B0.pdf",
-                    price: "https://www.gubkin.ru/info/enrollee/admission_board/postupayushchim-v-bakalavriat/platnoe-obuchenie/",
-                    achievements: "https://www.gubkin.ru/info/enrollee/admission_board/postupayushchim-v-bakalavriat/8.%20%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%20%D0%B8%20%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BE%D0%BA%20%D1%83%D1%87%D1%91%D1%82%D0%B0%20%D0%B8%D0%BD%D0%B4%D0%B8%D0%B2%D0%B8%D0%B4%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%B4%D0%BE%D1%81%D1%82%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9.pdf"
-                },
+                links: { kcp: "https://www.gubkin.ru/info/enrollee/admission_board/", price: "https://www.gubkin.ru/info/enrollee/admission_board/postupayushchim-v-bakalavriat/platnoe-obuchenie/", achievements: "https://www.gubkin.ru/info/enrollee/admission_board/postupayushchim-v-bakalavriat/8.%20%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%20%D0%B8%20%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BE%D0%BA%20%D1%83%D1%87%D1%91%D1%82%D0%B0%20%D0%B8%D0%BD%D0%B4%D0%B8%D0%B2%D0%B8%D0%B4%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%B4%D0%BE%D1%81%D1%82%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9.pdf" },
                 specs: [
                     { code: "10.05.03", name: "ИБ автоматиз. систем (С)", budget: 32, paid: 15, score: 265, price: "310.000" },
                     { code: "10.03.01", name: "Информ. безопасность (Б)", budget: 28, paid: 50, score: 268, price: "305.000" }
@@ -89,11 +131,7 @@
             {
                 name: "НИТУ МИСИС",
                 sport: "Только ГТО (3 б.)",
-                links: {
-                    kcp: "https://misis.ru/applicants/admission/baccalaureate-and-specialty/kcp/",
-                    price: "https://misis.ru/applicants/admission/baccalaureate-and-specialty/stoimost-obucheniya/",
-                    achievements: "https://misis.ru/applicants/admission/baccalaureate-and-specialty/achievements/"
-                },
+                links: { kcp: "https://misis.ru/applicants/admission/baccalaureate-and-specialty/kcp/", price: "https://misis.ru/applicants/admission/baccalaureate-and-specialty/stoimost-obucheniya/", achievements: "https://misis.ru/applicants/admission/baccalaureate-and-specialty/achievements/" },
                 specs: [
                     { code: "10.03.01", name: "Информ. безопасность (Б)", budget: 45, paid: 60, score: 272, price: "310.000" },
                     { code: "10.05.01", name: "Компьютерная безопасность (С)", budget: 25, paid: 30, score: 268, price: "315.000" }
@@ -102,11 +140,7 @@
             {
                 name: "РУТ (МИИТ)",
                 sport: "МС / Сборная: +5 б.",
-                links: {
-                    kcp: "https://www.miit.ru/page/174914",
-                    price: "https://www.miit.ru/page/174917",
-                    achievements: "https://www.miit.ru/page/136668"
-                },
+                links: { kcp: "https://www.miit.ru/page/174914", price: "https://www.miit.ru/page/174917", achievements: "https://www.miit.ru/page/136668" },
                 specs: [
                     { code: "10.03.01", name: "Информ. безопасность (Б)", budget: 40, paid: 150, score: 245, price: "285.000" },
                     { code: "10.05.03", name: "ИБ автоматиз. систем (С)", budget: 35, paid: 300, score: 240, price: "290.000" }
@@ -115,11 +149,7 @@
             {
                 name: "МИИГАиК",
                 sport: "МС / Сборная: +6 б.",
-                links: {
-                    kcp: "https://www.miigaik.ru/Abitur/kcp/",
-                    price: "https://www.miigaik.ru/Abitur/stoimost/",
-                    achievements: "https://www.miigaik.ru/Abitur/poleznoe/"
-                },
+                links: { kcp: "https://www.miigaik.ru/Abitur/kcp/", price: "https://www.miigaik.ru/Abitur/stoimost/", achievements: "https://www.miigaik.ru/Abitur/poleznoe/" },
                 specs: [
                     { code: "10.03.01", name: "Информ. безопасность (Б)", budget: 20, paid: 25, score: 235, price: "250.000" },
                     { code: "21.05.01", name: "Прикладная геодезия (С)", budget: 110, paid: 40, score: 215, price: "260.000" }
@@ -128,11 +158,7 @@
             {
                 name: "РАНХиГС (Москва)",
                 sport: "МС: +5 б.",
-                links: {
-                    kcp: "https://www.ranepa.ru/obr/bakalavriat-i-specialitet/plan-priema/",
-                    price: "https://www.ranepa.ru/obr/bakalavriat-i-specialitet/stoimost-obucheniya/",
-                    achievements: "https://www.ranepa.ru/obr/bakalavriat-i-specialitet/uchet-individualnykh-dostizheniy/"
-                },
+                links: { kcp: "https://www.ranepa.ru/pk/", price: "https://www.ranepa.ru/obr/bakalavriat-i-specialitet/stoimost-obucheniya/", achievements: "https://www.ranepa.ru/obr/bakalavriat-i-specialitet/uchet-individualnykh-dostizheniy/" },
                 specs: [
                     { code: "27.03.03", name: "Системный анализ и упр. (Б)", budget: 60, paid: 30, score: 255, price: "350.000" }
                 ]
@@ -140,11 +166,7 @@
             {
                 name: "МФЮА",
                 sport: "МС: +5 б.",
-                links: {
-                    kcp: "https://www.mfua.ru/abitur/priemnaya-komissiya/plan-priema/",
-                    price: "https://www.mfua.ru/abitur/stoimost-obucheniya/",
-                    achievements: "https://www.mfua.ru/abitur/individualnye-dostizheniya/"
-                },
+                links: { kcp: "https://priem.mfua.ru/", price: "https://www.mfua.ru/abitur/stoimost-obucheniya/", achievements: "https://www.mfua.ru/abitur/individualnye-dostizheniya/" },
                 specs: [
                     { code: "10.03.01", name: "Информ. безопасность (Б)", budget: 10, paid: 45, score: 195, price: "185.000" }
                 ]
@@ -165,32 +187,22 @@
                             <i class="fas fa-medal mr-1"></i> ${u.sport}
                         </a>
                     </div>
-                    
-                    <div class="flex-grow">
-                        <div class="grid grid-cols-5 text-[10px] font-black text-slate-400 uppercase mb-3 px-2 tracking-widest">
-                            <div class="col-span-2">Направление / Код</div>
-                            <div class="text-center">Бюдж.</div>
-                            <div class="text-center">Плат.</div>
-                            <div class="text-right">Цена</div>
-                        </div>
-                        <div class="space-y-2">
-                            ${u.specs.map(s => `
-                                <div class="grid grid-cols-5 items-center bg-slate-50 rounded-xl border border-slate-100 text-sm overflow-hidden hover:border-blue-200 transition-all">
-                                    <div class="col-span-2 p-3 font-bold text-slate-700 leading-tight">
-                                        <div class="spec-code mb-1 w-fit">${s.code}</div>
-                                        <div>${s.name}</div>
-                                    </div>
-                                    <a href="${u.links.kcp}" target="_blank" class="p-3 text-center font-black text-green-600 cell-link" title="План приема (бюджет)">${s.budget}</a>
-                                    <a href="${u.links.kcp}" target="_blank" class="p-3 text-center font-bold text-slate-400 cell-link" title="План приема (платно)">${s.paid}</a>
-                                    <a href="${u.links.price}" target="_blank" class="p-3 text-right font-black text-blue-600 cell-link" title="Стоимость обучения">${s.price}</a>
+                    <div class="space-y-2">
+                        ${u.specs.map(s => `
+                            <div class="grid grid-cols-5 items-center bg-slate-50 rounded-xl border border-slate-100 text-sm overflow-hidden hover:border-blue-200 transition-all">
+                                <div class="col-span-2 p-3 font-bold text-slate-700 leading-tight">
+                                    <div class="spec-code mb-1 w-fit">${s.code}</div>
+                                    <div>${s.name}</div>
                                 </div>
-                            `).join('')}
-                        </div>
+                                <a href="${u.links.kcp}" target="_blank" class="p-3 text-center font-black text-green-600 cell-link">${s.budget}</a>
+                                <a href="${u.links.kcp}" target="_blank" class="p-3 text-center font-bold text-slate-400 cell-link">${s.paid}</a>
+                                <a href="${u.links.price}" target="_blank" class="p-3 text-right font-black text-blue-600 cell-link">${s.price}</a>
+                            </div>
+                        `).join('')}
                     </div>
-
                     <div class="mt-8 pt-6 border-t border-slate-100">
                         <a href="${u.links.kcp}" target="_blank" class="flex items-center justify-center gap-2 w-full py-4 bg-slate-900 text-white rounded-xl text-xs font-bold uppercase tracking-widest hover:bg-blue-600 transition-colors">
-                            Официальные данные ВУЗа <i class="fas fa-external-link-alt ml-2 opacity-50"></i>
+                            Официальный сайт ВУЗа <i class="fas fa-external-link-alt ml-2 opacity-50 text-[10px]"></i>
                         </a>
                     </div>
                 </div>
