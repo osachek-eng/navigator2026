@@ -3,78 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Навигатор абитуриента 2026 | Проверенные данные</title>
+    <title>Навигатор ИБ 2026 | Официальные данные</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap');
-        body { font-family: 'Manrope', sans-serif; background-color: #f8fafc; }
-        .uni-card { background: white; border-radius: 1.5rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); border: 1px solid #e2e8f0; }
-        .uni-card:hover { transform: translateY(-4px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05); }
+        @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&display=swap');
+        body { font-family: 'Manrope', sans-serif; background-color: #f1f5f9; }
+        .uni-card { background: white; border-radius: 1.2rem; border: 1px solid #e2e8f0; transition: 0.3s; }
+        .uni-card:hover { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
         .tag-sport { background: #fff7ed; color: #c2410c; border: 1px solid #fdba74; font-size: 11px; padding: 2px 8px; border-radius: 6px; font-weight: 700; }
+        .table-head { font-size: 10px; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 800; }
     </style>
 </head>
-<body class="text-slate-900">
+<body>
 
-    <!-- Header & Timer -->
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div class="container mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3">
-                <div class="bg-indigo-600 p-2 rounded-xl text-white"><i class="fas fa-compass fa-lg"></i></div>
-                <h1 class="text-xl font-extrabold tracking-tight italic">Навигатор абитуриента 2026</h1>
+                <div class="bg-blue-600 p-2 rounded-lg text-white"><i class="fas fa-university"></i></div>
+                <h1 class="text-xl font-extrabold text-slate-800">Абитуриент 2026</h1>
             </div>
-            <div id="timer" class="bg-slate-900 text-white px-6 py-2 rounded-full text-sm font-bold shadow-lg shadow-indigo-200">
-                До начала приема: <span id="days-count" class="text-indigo-400">--</span> дней
+            <div id="timer" class="bg-slate-900 text-white px-5 py-2 rounded-full text-sm font-bold">
+                До начала приема: <span id="days-count" class="text-blue-400">--</span> дней
             </div>
         </div>
     </header>
 
-    <!-- Key Dates Section -->
     <section class="container mx-auto px-4 py-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="bg-indigo-50 p-6 rounded-3xl border border-indigo-100">
-                <h2 class="font-extrabold mb-4 flex items-center gap-2"><i class="fas fa-calendar-alt text-indigo-600"></i> График ЕГЭ 2026</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100">
+                <h2 class="font-bold text-blue-900 mb-4"><i class="fas fa-edit mr-2"></i> График ЕГЭ 2026 (Официально)</h2>
                 <div class="space-y-2 text-sm">
-                    <div class="flex justify-between border-b border-indigo-200 pb-1"><span>Русский язык</span><span class="font-bold">25 мая</span></div>
-                    <div class="flex justify-between border-b border-indigo-200 pb-1"><span>Математика (профиль)</span><span class="font-bold">28 мая</span></div>
-                    <div class="flex justify-between pb-1"><span>Физика</span><span class="font-bold">4 июня</span></div>
+                    <div class="flex justify-between border-b border-blue-100 pb-1"><span>Русский язык</span><span class="font-bold">4 июня</span></div>
+                    <div class="flex justify-between border-b border-blue-100 pb-1"><span>Математика (профиль)</span><span class="font-bold">8 июня</span></div>
+                    <div class="flex justify-between"><span>Физика</span><span class="font-bold text-red-600">11 июня</span></div>
                 </div>
             </div>
-            <div class="bg-slate-900 p-6 rounded-3xl text-white">
-                <h2 class="font-extrabold mb-4 flex items-center gap-2"><i class="fas fa-clock text-indigo-400"></i> Приемная кампания</h2>
-                <div class="space-y-2 text-sm text-slate-300">
-                    <div class="flex justify-between"><span>Старт приема документов</span><span class="text-white font-bold">20 июня</span></div>
-                    <div class="flex justify-between"><span>Окончание приема (ЕГЭ)</span><span class="text-white font-bold">25 июля</span></div>
-                    <div class="flex justify-between"><span>Приказы (основной этап)</span><span class="text-white font-bold">5-9 августа</span></div>
+            <div class="bg-slate-800 p-6 rounded-2xl text-white">
+                <h2 class="font-bold mb-4 text-blue-300"><i class="fas fa-calendar-check mr-2"></i> Приемная кампания</h2>
+                <div class="space-y-2 text-sm">
+                    <div class="flex justify-between"><span>Прием документов</span><span class="font-bold">с 20 июня</span></div>
+                    <div class="flex justify-between"><span>Завершение (ЕГЭ)</span><span class="font-bold">25 июля</span></div>
+                    <div class="flex justify-between"><span>Зачисление</span><span class="font-bold">5-9 августа</span></div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Universities List -->
-    <main class="container mx-auto px-4 pb-20">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="uni-list">
-            <!-- Data will be injected here -->
-        </div>
-    </main>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" id="uni-list"></div>
+    </section>
 
     <script>
         const unis = [
             {
                 name: "РГУ нефти и газа им. Губкина",
-                short: "ИТ-факультет (Физика обязательна)",
-                sportPoints: "5-10 баллов", // МС - 10, КМС - 5
-                link: "https://gubkin.ru/info/enrollee/admission_board/postupayushchim-v-bakalavriat/8.%20%D0%9F%D0%B5%D1%80%D0%B5%D1%87%D0%B5%D0%BD%D1%8C%20%D0%B8%20%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BE%D0%BA%20%D1%83%D1%87%D1%91%D1%82%D0%B0%20%D0%B8%D0%BD%D0%B4%D0%B8%D0%B2%D0%B8%D0%B4%D1%83%D0%B0%D0%BB%D1%8C%D0%BD%D1%8B%D1%85%20%D0%B4%D0%BE%D1%81%D1%82%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D0%B9%20(%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,%20%D0%9E%D1%80%D0%B5%D0%BD%D0%B1%D1%83%D1%80%D0%B3)%20-%202026_.pdf",
+                sport: "МС: +10 б. / КМС: +5 б.",
+                link: "https://www.gubkin.ru/comission/",
                 specs: [
-                    { name: "Информ. безопасность (Б)", budget: 28, paid: 50, score: 268, price: "305.000" },
-                    { name: "ИБ автоматиз. систем (С)", budget: 32, paid: 13, score: 265, price: "310.000" }
+                    { name: "ИБ автоматиз. систем (С)", budget: 32, paid: 15, score: 265, price: "310.000" },
+                    { name: "Информ. безопасность (Б)", budget: 28, paid: 50, score: 268, price: "305.000" }
                 ]
             },
             {
                 name: "НИТУ МИСИС",
-                short: "Институт компьютерных наук",
-                sportPoints: null, // Только ГТО (3б), за МС баллов нет
-                link: "https://misis.ru/applicants/admission/baccalaureate-and-specialty/achievements/",
+                sport: null,
+                link: "https://misis.ru/applicants/",
                 specs: [
                     { name: "Информ. безопасность (Б)", budget: 45, paid: 60, score: 272, price: "310.000" },
                     { name: "Компьютерная безопасность (С)", budget: 25, paid: 30, score: 268, price: "315.000" }
@@ -82,28 +74,25 @@
             },
             {
                 name: "РУТ (МИИТ)",
-                short: "Информационные системы",
-                sportPoints: "2-5 баллов",
-                link: "https://miit.ru/page/136668",
+                sport: "МС / Сборная: +5 б.",
+                link: "https://miit.ru/admission",
                 specs: [
-                    { name: "Информ. безопасность (Б)", budget: 40, paid: 45, score: 245, price: "285.000" },
-                    { name: "ИБ автоматиз. систем (С)", budget: 35, paid: 345, score: 240, price: "290.000" }
+                    { name: "Информ. безопасность (Б)", budget: 40, paid: 150, score: 245, price: "285.000" },
+                    { name: "ИБ автоматиз. систем (С)", budget: 35, paid: 300, score: 240, price: "290.000" }
                 ]
             },
             {
                 name: "МИИГАиК",
-                short: "Геодезия и ИТ",
-                sportPoints: "6 баллов", // МС и Сборная РФ - 6 баллов
-                link: "https://www.miigaik.ru/Abitur/poleznoe/",
+                sport: "МС / Сборная: +6 б.",
+                link: "https://www.miigaik.ru/priem/",
                 specs: [
                     { name: "Информ. безопасность (Б)", budget: 20, paid: 25, score: 235, price: "250.000" },
-                    { name: "Прикладная геодезия (С)", budget: 110, paid: 30, score: 215, price: "260.000" }
+                    { name: "Прикладная геодезия (С)", budget: 110, paid: 40, score: 215, price: "260.000" }
                 ]
             },
             {
                 name: "РАНХиГС (Москва)",
-                short: "Только Системный анализ (с Физикой)",
-                sportPoints: "3-5 баллов", // За МС/КМС
+                sport: "МС: +5 б.",
                 link: "https://www.ranepa.ru/obr/bakalavriat-i-specialitet/",
                 specs: [
                     { name: "Системный анализ и упр. (Б)", budget: 60, paid: 30, score: 255, price: "350.000" }
@@ -111,19 +100,17 @@
             },
             {
                 name: "МФЮА",
-                short: "Информационные технологии",
-                sportPoints: "3-5 баллов",
-                link: "https://www.mfua.ru/abitur/id/",
+                sport: "МС: +5 б.",
+                link: "https://www.mfua.ru/abitur/",
                 specs: [
-                    { name: "Информ. безопасность (Б)", budget: 10, paid: 15, score: 195, price: "185.000" }
+                    { name: "Информ. безопасность (Б)", budget: 10, paid: 45, score: 195, price: "185.000" }
                 ]
             }
         ];
 
         function calculateDays() {
             const start = new Date('2026-06-20');
-            const now = new Date();
-            const diff = start - now;
+            const diff = start - new Date();
             document.getElementById('days-count').innerText = Math.ceil(diff / (1000 * 60 * 60 * 24));
         }
 
@@ -131,40 +118,35 @@
             calculateDays();
             const list = document.getElementById('uni-list');
             list.innerHTML = unis.map(u => `
-                <div class="uni-card p-6 flex flex-col">
-                    <div class="mb-4">
-                        <div class="flex justify-between items-start">
-                            <h3 class="font-extrabold text-xl leading-tight text-slate-800">${u.name}</h3>
-                            ${u.sportPoints ? `<span class="tag-sport"><i class="fas fa-medal mr-1"></i> МС: +${u.sportPoints}</span>` : ''}
-                        </div>
-                        <p class="text-xs text-slate-400 font-bold uppercase tracking-widest mt-1">${u.short}</p>
+                <div class="uni-card p-6 flex flex-col h-full">
+                    <div class="mb-4 flex justify-between items-start gap-4">
+                        <h3 class="font-extrabold text-lg text-slate-800 leading-tight">${u.name}</h3>
+                        ${u.sport ? `<span class="tag-sport whitespace-nowrap">${u.sport}</span>` : ''}
                     </div>
-
-                    <div class="flex-grow">
-                        <table class="w-full text-left text-sm">
-                            <thead class="text-[10px] text-slate-400 uppercase font-black">
+                    <div class="flex-grow overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead class="table-head">
                                 <tr>
-                                    <th class="py-2">Программа</th>
-                                    <th class="text-center">Бюджет</th>
-                                    <th class="text-center">Платно</th>
-                                    <th class="text-right">Цена/г</th>
+                                    <th class="py-2 text-left">Программа</th>
+                                    <th class="text-center px-2">Бюдж.</th>
+                                    <th class="text-center px-2">Плат.</th>
+                                    <th class="text-right">Цена</th>
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-slate-100">
                                 ${u.specs.map(s => `
                                     <tr>
-                                        <td class="py-3 font-semibold pr-2">${s.name}</td>
-                                        <td class="text-center text-green-600 font-extrabold">${s.budget}</td>
-                                        <td class="text-center text-slate-500 font-bold">${s.paid}</td>
-                                        <td class="text-right font-bold text-indigo-600">${s.price}</td>
+                                        <td class="py-3 font-semibold text-slate-700">${s.name}</td>
+                                        <td class="text-center font-bold text-green-600">${s.budget}</td>
+                                        <td class="text-center text-slate-500 font-medium">${s.paid}</td>
+                                        <td class="text-right font-bold text-blue-600">${s.price}</td>
                                     </tr>
                                 `).join('')}
                             </tbody>
                         </table>
                     </div>
-                    
-                    <a href="${u.link}" target="_blank" class="mt-6 block text-center py-3 rounded-xl bg-slate-100 text-slate-600 text-xs font-bold hover:bg-indigo-600 hover:text-white transition-all uppercase tracking-widest">
-                        Проверить правила на сайте вуза
+                    <a href="${u.link}" target="_blank" class="mt-6 block text-center py-2 bg-slate-50 text-slate-500 text-xs font-bold rounded-lg hover:bg-blue-600 hover:text-white transition-colors">
+                        ПЕРЕЙТИ НА САЙТ ВУЗА
                     </a>
                 </div>
             `).join('');
