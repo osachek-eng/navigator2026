@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Навигатор поступления</title>
+<title>Навигатор поступления сына 2026</title>
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
@@ -12,164 +12,225 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
 
 body {
-    font-family: 'Inter', sans-serif;
-    background: #f8fafc;
+    font-family: Inter, sans-serif;
+    background:#f8fafc;
 }
 
-.card {
-    background: white;
-    border-radius: 24px;
-    border: 1px solid #e2e8f0;
-    transition: .25s ease;
+.card{
+    background:white;
+    border-radius:24px;
+    border:1px solid #e2e8f0;
+    transition:.25s;
 }
 
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px -20px rgba(59,130,246,.25);
-    border-color: #3b82f6;
+.card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 20px 40px -20px rgba(59,130,246,.25);
 }
 
-.cell-link:hover {
-    background: #eff6ff;
-}
-
-.tip {
-    background: white;
-    border-left: 4px solid #3b82f6;
-}
+.green{border-left:5px solid #16a34a;}
+.yellow{border-left:5px solid #eab308;}
+.red{border-left:5px solid #dc2626;}
+.blue{border-left:5px solid #2563eb;}
 </style>
 </head>
 
-<body class="text-slate-900 pb-20">
+<body class="pb-24 text-slate-900">
 
-<header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b">
-    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-        <div class="font-black text-xl text-blue-800 flex items-center gap-2">
-            <i class="fas fa-compass"></i>
-            NAVIGATOR <span id="year"></span>
-        </div>
+<header class="sticky top-0 bg-white/95 backdrop-blur border-b z-50">
+<div class="container mx-auto px-4 py-4 flex justify-between items-center">
+<div class="font-black text-xl text-blue-800">
+<i class="fas fa-compass mr-2"></i>НАВИГАТОР 2026
+</div>
 
-        <div class="text-xs bg-slate-900 text-white px-4 py-2 rounded-full font-bold">
-            До приемной кампании: <span id="days" class="text-blue-400">--</span> дн.
-        </div>
-    </div>
+<div class="text-xs font-bold bg-slate-900 text-white px-4 py-2 rounded-full">
+До математики: <span id="days"></span> дн.
+</div>
+</div>
 </header>
 
 <main class="container mx-auto px-4 mt-8">
 
-<div class="mb-8 p-4 rounded-2xl bg-amber-50 border border-amber-200 text-amber-800 text-sm font-medium">
-⚠️ Вся информация носит ориентировочный характер. Обязательно сверяйте данные на официальных сайтах вузов.
+<div class="p-4 rounded-2xl bg-blue-50 border border-blue-200 mb-10">
+<b>Стратегия:</b> Информационная безопасность + инженерные цифровые направления (Москва)
 </div>
 
-<section class="mb-14">
-<h2 class="text-2xl font-black mb-6">Полезно знать</h2>
+<!-- ЕГЭ -->
+<section class="mb-12">
+<h2 class="text-2xl font-black mb-5">
+<i class="fas fa-calendar text-blue-600 mr-2"></i>ЕГЭ 2026
+</h2>
 
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-
-<div class="tip p-6 rounded-2xl">
-<h3 class="font-bold mb-2">Индивидуальные достижения</h3>
-<p class="text-sm text-slate-600">
-Проверьте ГТО, аттестат с отличием, олимпиады и волонтёрство — это может дать дополнительные баллы.
-</p>
+<div class="grid md:grid-cols-3 gap-5">
+<div class="card p-5 blue">
+<div class="font-bold">Профильная математика</div>
+<div class="text-2xl font-black text-blue-700">8 июня</div>
 </div>
 
-<div class="tip p-6 rounded-2xl border-l-green-500">
-<h3 class="font-bold mb-2">Следите за списками</h3>
-<p class="text-sm text-slate-600">
-Конкурсные списки обновляются регулярно, но частота зависит от конкретного вуза.
-</p>
+<div class="card p-5 blue">
+<div class="font-bold">Русский язык</div>
+<div class="text-2xl font-black text-blue-700">4 июня</div>
 </div>
 
-<div class="tip p-6 rounded-2xl border-l-orange-500">
-<h3 class="font-bold mb-2">Проверяйте дедлайны</h3>
-<p class="text-sm text-slate-600">
-Сроки подачи оригиналов и согласий меняются ежегодно.
-</p>
+<div class="card p-5 blue">
+<div class="font-bold">Физика</div>
+<div class="text-2xl font-black text-blue-700">11 июня</div>
+</div>
+</div>
+</section>
+
+<!-- Приемная -->
+<section class="mb-12">
+<h2 class="text-2xl font-black mb-5">
+<i class="fas fa-file-signature text-green-600 mr-2"></i>Приёмная кампания
+</h2>
+
+<div class="grid md:grid-cols-2 gap-5">
+
+<div class="card p-6 green">
+<h3 class="font-bold mb-3">Бюджет</h3>
+<ul class="space-y-2 text-sm">
+<li>20 июня — старт подачи</li>
+<li>25 июля — завершение приема</li>
+<li>27 июля — конкурсные списки</li>
+<li>3 августа — согласие на зачисление</li>
+<li>5 августа — приказ</li>
+</ul>
+</div>
+
+<div class="card p-6 yellow">
+<h3 class="font-bold mb-3">Платное обучение</h3>
+<ul class="space-y-2 text-sm">
+<li>до 15 августа — договор</li>
+<li>до 20 августа — оплата</li>
+<li>20–25 августа — приказ</li>
+</ul>
 </div>
 
 </div>
 </section>
 
-<h2 class="text-2xl font-black mb-8">
-<i class="fas fa-university text-blue-600 mr-2"></i>
-Вузы
+<!-- ВУЗЫ -->
+<section>
+<h2 class="text-2xl font-black mb-6">
+<i class="fas fa-university text-indigo-600 mr-2"></i>Подходящие вузы
 </h2>
 
-<div id="uni-list" class="grid lg:grid-cols-2 gap-8"></div>
+<div id="universities" class="grid lg:grid-cols-2 gap-6"></div>
+</section>
 
 </main>
 
 <script>
-const year = new Date().getFullYear();
-document.getElementById('year').innerText = year;
-
-const startDate = new Date(`${year}-06-20`);
-const diff = Math.ceil((startDate - new Date()) / (1000*60*60*24));
-document.getElementById('days').innerText = diff > 0 ? diff : 0;
-
-function safeLink(url) {
-    try {
-        new URL(url);
-        return url;
-    } catch {
-        return "#";
-    }
-}
+const examDate = new Date("2026-06-08");
+const diff = Math.ceil((examDate - new Date())/(1000*60*60*24));
+document.getElementById("days").innerText = diff > 0 ? diff : 0;
 
 const universities = [
 {
-    name: "РГУ нефти и газа им. Губкина",
-    link: "https://www.gubkin.ru/",
-    sport: "+ ИД"
+name:"РТУ МИРЭА",
+level:"green",
+specs:[
+"10.03.01 Информационная безопасность",
+"10.05.03 Информационная безопасность автоматизированных систем",
+"11.03.02 Инфокоммуникационные технологии"
+],
+budget:"Высокое количество",
+paid:"Да",
+score:"Средний"
 },
+
 {
-    name: "НИТУ МИСИС",
-    link: "https://misis.ru/applicants/",
-    sport: "+ ИД"
+name:"МАДИ",
+level:"green",
+specs:[
+"09.03.01 Информатика",
+"27.03.04 Управление в технических системах"
+],
+budget:"Среднее",
+paid:"Да",
+score:"Ниже среднего"
 },
+
 {
-    name: "РУТ (МИИТ)",
-    link: "https://www.miit.ru/",
-    sport: "+ ИД"
+name:"РУТ (МИИТ)",
+level:"green",
+specs:[
+"10.03.01 ИБ",
+"09.03.02 ИС"
+],
+budget:"Среднее",
+paid:"Да",
+score:"Средний"
 },
+
 {
-    name: "МИИГАиК",
-    link: "https://www.miigaik.ru/",
-    sport: "+ ИД"
+name:"МИИГАиК",
+level:"green",
+specs:[
+"09.03.02 ИС",
+"27.03.04 Автоматизация"
+],
+budget:"Есть",
+paid:"Да",
+score:"Ниже среднего"
 },
+
 {
-    name: "РАНХиГС",
-    link: "https://www.ranepa.ru/",
-    sport: "+ ИД"
+name:"НИТУ МИСИС",
+level:"yellow",
+specs:[
+"10.03.01 ИБ",
+"10.05.01 Компьютерная безопасность"
+],
+budget:"Ограничено",
+paid:"Да",
+score:"Выше среднего"
 },
+
 {
-    name: "МФЮА",
-    link: "https://www.mfua.ru/",
-    sport: "+ ИД"
+name:"Губкин",
+level:"yellow",
+specs:[
+"10.03.01 ИБ",
+"09.03.01"
+],
+budget:"Есть",
+paid:"Да",
+score:"Средний+"
+},
+
+{
+name:"МФЮА",
+level:"blue",
+specs:[
+"ИБ",
+"Прикладная информатика"
+],
+budget:"Минимум",
+paid:"Да",
+score:"Низкий"
 }
 ];
 
-function render() {
-    const list = document.getElementById('uni-list');
+function render(){
+const root = document.getElementById("universities");
 
-    list.innerHTML = universities.map(u => `
-        <div class="card p-8">
-            <div class="flex justify-between items-start mb-6">
-                <h3 class="font-black text-xl">${u.name}</h3>
-                <span class="text-xs bg-blue-50 text-blue-700 px-3 py-1 rounded-lg font-bold">${u.sport}</span>
-            </div>
+root.innerHTML = universities.map(u=>`
+<div class="card p-6 ${u.level}">
+<h3 class="font-black text-xl mb-4">${u.name}</h3>
 
-            <p class="text-slate-600 mb-8 text-sm">
-                Официальная страница приёмной кампании
-            </p>
+<ul class="text-sm space-y-2 mb-5">
+${u.specs.map(s=>`<li>• ${s}</li>`).join("")}
+</ul>
 
-            <a href="${safeLink(u.link)}"
-               target="_blank"
-               class="block text-center bg-slate-900 hover:bg-blue-600 transition text-white py-4 rounded-xl font-bold">
-               Перейти
-            </a>
-        </div>
-    `).join('');
+<div class="grid grid-cols-3 gap-3 text-xs">
+<div><b>Бюджет</b><br>${u.budget}</div>
+<div><b>Платные</b><br>${u.paid}</div>
+<div><b>Конкурс</b><br>${u.score}</div>
+</div>
+</div>
+`).join("");
 }
 
 render();
